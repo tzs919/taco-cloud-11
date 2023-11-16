@@ -2,6 +2,7 @@ package tacos.messaging;
 
 import org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory;
 
+import javax.jms.JMSException;
 import javax.jms.*;
 
 public class ArtemisExampleSend {

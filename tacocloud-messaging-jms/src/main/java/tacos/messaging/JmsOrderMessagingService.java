@@ -28,7 +28,9 @@ public class JmsOrderMessagingService implements OrderMessagingService {
 //    jms.send(new MessageCreator(){
 //      @Override
 //      public Message createMessage(Session session) throws JMSException {
-//        return null;
+//        Message message = session.createObjectMessage(order);
+//        message.setStringProperty("X_ORDER_SOURCE", "WEB");
+//        return message;
 //      }
 //    });
   }

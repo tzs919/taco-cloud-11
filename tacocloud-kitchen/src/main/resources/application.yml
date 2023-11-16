@@ -2,12 +2,10 @@ server:
   port: 8081
 spring:
   profiles:
-    active: jms-listener
+    active: jms-template
 ---
 spring:
-  profiles: jms-template, jms-listener
-# The values given here are actually the default values. But they are explicitly
-# set here as an example of setting the Artemis properties.
+  profiles: jms-template, jms-listener,rabbitmq-template,rabbitmq-listener
   jms:
     template:
       receive-timeout: 2
@@ -23,7 +21,9 @@ spring:
     port: 5672
     username: guest
     password: guest
-
+#    template:
+#      receive-timeout: 10000
+# receive-timeout单位毫秒
 ---
 spring:
   profiles: kafka-listener
